@@ -62,6 +62,6 @@ public class PLAYERCONTROLLER : MonoBehaviour
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHeath);
-        Debug.Log(currentHealth + "/" + maxHeath);
+        UIHANDLER.instance.SetHealthValue(currentHealth / (float)maxHeath);
     }
 }
