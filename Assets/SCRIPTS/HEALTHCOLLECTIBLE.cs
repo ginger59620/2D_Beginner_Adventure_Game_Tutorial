@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HEALTHCOLLECTIBLE : MonoBehaviour
 {
+    public AudioClip collectedClip;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         PLAYERCONTROLLER controller = other.GetComponent<PLAYERCONTROLLER>();
@@ -13,5 +15,7 @@ public class HEALTHCOLLECTIBLE : MonoBehaviour
             controller.ChangeHealth(1);
             Destroy(gameObject);
         }
+
+        controller.PlaySound(collectedClip);
     }
 }
